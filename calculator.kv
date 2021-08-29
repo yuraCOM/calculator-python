@@ -1,0 +1,95 @@
+<RezultTextInput@TextInput>
+    size_hint: 1, .40
+    readonly: True
+    background_color: .23,.69,.66,1
+    font_size: self.height/3
+    color: .9,.14,.16,1
+    halign: "right"
+    valign: 'middle'
+    multiline: True
+
+<NumsButton@Button>
+    on_press: app.add_number(self)
+    background_normal: ''
+    background_color: .36,.86,.58, 1
+    font_size: self.height/1.5
+    bold: True
+    italic: True
+    color: .2,.22,.42,1
+    outline_color: .94,.92,.84,1
+    outline_width: 3
+    canvas.before:
+        Color:
+            rgba: .94,.45,.15, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+<NumButtonsLayout>
+    # size_hint:None,None
+    # height:1600
+    # width:100
+    padding: 5
+    canvas.before:
+        Color:
+            rgba: .43,.44,.47,1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        spacing: 5
+        orientation: 'vertical'
+
+        RezultTextInput:
+            id: input
+            text: ""
+        GridLayout:
+            spacing: 5
+            col: 4
+            rows: 5
+
+            NumsButton:
+                text: "%"
+            NumsButton:
+                text: "//"
+            NumsButton:
+                text: "**"
+            NumsButton:
+                text: "+"
+
+            NumsButton:
+                text: "7"
+            NumsButton:
+                text: "8"
+            NumsButton:
+                text: "9"
+            NumsButton:
+                text: "-"
+
+            NumsButton:
+                text: "4"
+            NumsButton:
+                text: "5"
+            NumsButton:
+                text: "6"
+            NumsButton:
+                text: "*"
+
+            NumsButton:
+                text: "1"
+            NumsButton:
+                text: "2"
+            NumsButton:
+                text: "3"
+            NumsButton:
+                text: "/"
+               
+            NumsButton:
+                text: "."
+            NumsButton:
+                text: "0"
+            NumsButton:
+                text: "C"
+                on_press: app.update_label_clear(self)
+            NumsButton:
+                text: "="
