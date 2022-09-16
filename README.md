@@ -2,5 +2,5 @@
 - Python
 - Kivy
 - Android
-- ***
+
 
